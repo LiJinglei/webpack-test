@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>webpack-test</title>
+    <style>
+        body{
+            background: #afa;
+        }
+    </style>
 </head>
 <body>
 
-<script type="application/javascript" src="bundle.js"></script>
+<script type="application/javascript" src="./dist/js/main.js"></script>
+<script type="application/javascript">
+   window.onload = function () {
+       helloworld();
+   }
+</script>
 </body>
 </html>
