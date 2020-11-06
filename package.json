@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --config webpack.config.js --progress --display-module --colors --display-reason"
   },
   "repository": {
@@ -18,7 +17,18 @@
   },
   "homepage": "https://github.com/LiJinglei/webpack-test#readme",
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "babel-loader": "^8.1.0",
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^4.5.0",
     "webpack": "^4.36.1",
-    "webpack-cli": "^3.3.6"
+    "webpack-cli": "^3.3.6",
+    "html-loader": "^1.3.2",
+    "style-loader": "^2.0.0"
+  },
+  "dependencies": {
+    "babel-loader": "^8.1.0",
+    "html-loader": "^1.3.2",
+    "style-loader": "^2.0.0"
   }
 }
