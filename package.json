@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack --config webpack.config.js --progress --display-module --colors --display-reason"
+    "webpack": "webpack --progress --display-module --colors --display-reason"
   },
   "repository": {
     "type": "git",
