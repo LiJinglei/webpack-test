@@ -2,12 +2,17 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 通过 npm 安装
 console.log('开始加载webpack.config.js');
 module.exports = {
-    entry: path.resolve(__dirname, 'src/index.js'),
+    // entry: path.resolve(__dirname, 'src/index.js'),
+    entry: {
+        app: './src/index.js',
+        print: './src/js/printMe.js',
+    },
     output: {
         path: path.resolve(__dirname, 'dist/'),
         filename: "js/[name].[hash].js",
         pathinfo: true
     },
+    devtool: 'inline-source-map',
     module: {
         rules: [
             {test: /.txt$/, use: 'raw-loader'},

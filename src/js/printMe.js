@@ -3,4 +3,5 @@
  */
 export default function printMe() {
     alert('alert print me');
+    consol.log('console.log')
 }
