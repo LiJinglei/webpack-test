@@ -24,14 +24,17 @@ module.exports = {
                 exclude: /node_modules/,
                 include: path.join(__dirname, 'src')
             }/*,
-            {
-                test: /\.(jpg|png|jpeg)$/,
-                use: ['url-loader'],
-                options: {
-                    limit: 1000
-                }
-            }*/
+             {
+             test: /\.(jpg|png|jpeg)$/,
+             use: ['url-loader'],
+             options: {
+             limit: 1000
+             }
+             }*/
         ]
+    },
+    devServer: {
+        contentBase: './dist'
     },
     plugins: [
         new CleanWebpackPlugin(),
