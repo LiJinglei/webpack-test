@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 通过 npm 安装
+const {CleanWebpackPlugin} = require('clean-webpack-plugin'); // 通过 npm 安装
 console.log('开始加载webpack.config.js');
 module.exports = {
     // entry: path.resolve(__dirname, 'src/index.js'),
@@ -31,7 +32,9 @@ module.exports = {
                 }
             }*/
         ]
-    }, plugins: [
+    },
+    plugins: [
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({template: './index.html'})
     ],
     mode: 'production'
