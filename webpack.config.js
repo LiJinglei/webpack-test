@@ -1,12 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 通过 npm 安装
 const {CleanWebpackPlugin} = require('clean-webpack-plugin'); // 通过 npm 安装
+const webpack = require('webpack');
+
+
 console.log('开始加载webpack.config.js');
 module.exports = {
     // entry: path.resolve(__dirname, 'src/index.js'),
     entry: {
-        app: './src/index.js',
-        print: './src/js/printMe.js',
+        app: './src/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist/'),
@@ -23,14 +25,7 @@ module.exports = {
                 use: ['babel-loader'],
                 exclude: /node_modules/,
                 include: path.join(__dirname, 'src')
-            }/*,
-             {
-             test: /\.(jpg|png|jpeg)$/,
-             use: ['url-loader'],
-             options: {
-             limit: 1000
-             }
-             }*/
+            }
         ]
     },
     devServer: {
@@ -38,7 +33,10 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({template: './index.html'})
+        new HtmlWebpackPlugin({template: './index.html'}),
+        new webpack.ProvidePlugin({
+            _: 'lodash'
+        })
     ],
     mode: 'production'
 }
